@@ -82,6 +82,7 @@ function scrollbottom() {
 
 function reply(){
     let txt = textarea.value.toUpperCase()
+    const today = new Date()
     if (txt === 'HI' || txt === 'HAI'){
         return "How are you?"
     }
@@ -99,12 +100,10 @@ function reply(){
     }
     else if( txt === "WHAT'S TIME NOW" || txt === "WHAT'S THE TIME" || txt === "WHAT'S THE TIME NOW" || txt === 'WHAT IS THE TIME ')
     {
-        let today = new Date()
         return `${addZero(today.getHours())}:${addZero(today.getMinutes())}`
     }
     else if( txt === "TODAY DATE" || txt === "WHAT'S THE DATE" || txt === "WHAT'S THE DATE TODAY" )
     {    
-        today = new Date()
         return `${addZero(today.getDate())}:${addZero(today.getMonth()+1)}:${addZero(today.getFullYear())}`
     }
     else if(txt === "NO" || txt === "NOTHING") {
