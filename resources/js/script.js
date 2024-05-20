@@ -12,7 +12,6 @@ textarea.addEventListener('input', function(){
     this.style.height ='35px';
     this.style.height =`${this.scrollHeight}px`;
 })
-const today = new Date()
 // footer form
 const chatform = document.querySelector('.input-form');
 textarea.addEventListener('input',function(){
@@ -100,10 +99,12 @@ function reply(){
     }
     else if( txt === "WHAT'S TIME NOW" || txt === "WHAT'S THE TIME" || txt === "WHAT'S THE TIME NOW" || txt === 'WHAT IS THE TIME ')
     {
+        let today = new Date()
         return `${addZero(today.getHours())}:${addZero(today.getMinutes())}`
     }
     else if( txt === "TODAY DATE" || txt === "WHAT'S THE DATE" || txt === "WHAT'S THE DATE TODAY" )
-    {
+    {    
+        today = new Date()
         return `${addZero(today.getDate())}:${addZero(today.getMonth()+1)}:${addZero(today.getFullYear())}`
     }
     else if(txt === "NO" || txt === "NOTHING") {
